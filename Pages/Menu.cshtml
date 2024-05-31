@@ -1,0 +1,40 @@
+﻿@page
+@model J104895_CO5227_ver3.Pages.MenuModel
+@{
+    ViewData["Title"] = "Menu";
+}
+
+<h2>Food Menu</h2>
+
+<div class="row">
+    @foreach (var menu in Model.Menu)
+    {
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img class="card-img-top" src="@menu.ImageUrl" alt="@menu.Name">
+                <div class="card-body">
+                    <h5 class="card-title">@menu.Name</h5>
+                    <p class="card-text">@menu.DishIngredients</p>
+                    <p class="card-text"><strong>@menu.Price.ToString("C")</strong></p>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<style>
+    .card {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+        .card img {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+    .card-body {
+        padding: 15px;
+    }
+</style>
